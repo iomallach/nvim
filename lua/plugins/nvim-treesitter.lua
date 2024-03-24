@@ -16,6 +16,9 @@ local opts = {
 		"sql",
 		"bash",
 		"regex",
+		"yaml",
+		"toml",
+		"gitignore",
 	},
 	highlight = {
 		enable = true,
