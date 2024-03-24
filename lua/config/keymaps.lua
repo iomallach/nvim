@@ -40,6 +40,10 @@ keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
 -- Window management
 keymap.set("n", "<leader>sv", ":vsplit<CR>", opts("Split vertically"))
 keymap.set("n", "<leader>sh", ":split<CR>", opts("Split horizontally"))
+keymap.set("n", "<A-Up>", "<CMD>resize +2<CR>")
+keymap.set("n", "<A-Down>", "<CMD>resize -2<CR>")
+keymap.set("n", "<A-Left>", "<CMD>vertical resize +2<CR>")
+keymap.set("n", "<A-Right>", "<CMD>vertical resize -2<CR>")
 
 -- Commenting
 keymap.set("n", "<leader>/", function()

@@ -23,12 +23,10 @@ local working_dir = function()
 end
 
 local config = function()
-	local theme = require("lualine.themes.everforest")
-
 	-- ""
 	require("lualine").setup({
 		options = {
-			theme = theme,
+			theme = "auto",
 			section_separators = { left = "", right = "" },
 			component_separators = {},
 			globalstatus = true,
