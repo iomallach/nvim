@@ -8,7 +8,7 @@ return {
 			dockerfile = { "hadolint" },
 			yaml = { "actionlint" },
 		}
-		vim.api.nvim_create_autocmd({ "InsertLeave", "BufEnter" }, {
+		vim.api.nvim_create_autocmd({ "InsertLeave", "BufEnter", "BufWritePre" }, {
 			callback = function()
 				require("lint").try_lint()
 			end,
