@@ -79,7 +79,7 @@ return {
 	end,
 	config = function()
 		local telescope = require("telescope")
-		opts = options()
+		local opts = options()
 		telescope.setup(opts)
 		-- load extensions
 		for _, ext in ipairs(opts.extensions_list) do

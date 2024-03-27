@@ -18,6 +18,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		map("n", "<leader>lo", "<CMD>Lspsaga outline<CR>", opts("Outline"))
 		map("n", "<leader>lpd", "<CMD>Lspsaga peek_definition<CR>", opts("Peek definition"))
 		map("n", "<leader>lgd", "<CMD>Lspsaga goto_definition<CR>", opts("Go to definition"))
+    map("n", "<leader>lgt", "<CMD>Lspsaga goto_type_definition<CR>", opts("Go to type definition"))
 		map("n", "<leader>lrn", "<CMD>Lspsaga rename<CR>", opts("Rename"))
 		map("n", "<leader>ld", "<CMD>Lspsaga show_line_diagnostics<CR>", opts("Show line diagnostic"))
 		map("n", "<leader>lD", "<CMD>Lspsaga show_buf_diagnostics<CR>", opts("Show buffer diagnostics"))
