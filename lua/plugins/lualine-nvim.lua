@@ -35,7 +35,7 @@ local config = function()
 			lualine_a = { "mode" },
 			lualine_b = { "filename" },
 			lualine_c = { "branch", "diff" },
-			lualine_x = { "diagnostics", lsp_info, "filetype" },
+			lualine_x = { "diagnostics", lsp_info },
 			lualine_y = {
 				{
 					working_dir,
