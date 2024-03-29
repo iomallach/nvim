@@ -5,7 +5,7 @@ opt.cursorline = true
 opt.fillchars = { eob = " " }
 
 -- disable nvim intro
-opt.shortmess:append "sI"
+opt.shortmess:append("sI")
 
 -- Tab / Indentation
 opt.tabstop = 2
@@ -25,8 +25,8 @@ opt.number = true
 opt.relativenumber = true
 opt.termguicolors = true
 opt.colorcolumn = "80"
-opt.list = not vim.opt.list:get()
-opt.listchars:append({ space = '·' })
+-- opt.list = not vim.opt.list:get()
+-- opt.listchars:append({ space = "·" })
 opt.signcolumn = "yes"
 opt.cmdheight = 1
 opt.scrolloff = 10
@@ -51,4 +51,4 @@ opt.encoding = "UTF-8"
 
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line
-opt.whichwrap:append "<>[]hl"
+opt.whichwrap:append("<>[]hl")
