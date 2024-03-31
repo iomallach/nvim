@@ -79,3 +79,6 @@ keymap.set("n", "<leader>tb", "<CMD>lua require'gitsigns'.toggle_current_line_bl
 keymap.set("n", "<tab>", "<CMD>BufferLineCycleNext<CR>", opts("Next buffer"))
 keymap.set("n", "<S-tab>", "<CMD>BufferLineCyclePrev<CR>", opts("Previous buffer"))
 keymap.set("n", "<leader>x", "<CMD>bd<CR>", opts("Close buffer"))
+
+-- Neogit
+keymap.set("n", "<leader>gg", "<CMD>Neogit<CR>", opts("Open Neogit"))
