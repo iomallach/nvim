@@ -82,3 +82,6 @@ keymap.set("n", "<leader>x", "<CMD>bd<CR>", opts("Close buffer"))
 
 -- Neogit
 keymap.set("n", "<leader>gg", "<CMD>Neogit<CR>", opts("Open Neogit"))
+
+-- Oil
+keymap.set("n", "-", "<CMD>Oil --float<CR>", opts("Open float oil"))

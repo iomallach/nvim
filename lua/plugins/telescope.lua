@@ -76,6 +76,8 @@ return {
 			"<CMD>Telescope current_buffer_fuzzy_find<CR>",
 			{ desc = "Telescope Find in Buffer" }
 		)
+		keymap.set("n", "<leader>fd", "<CMD>Telescope diagnostics<CR>", { desc = "Telescope Find Diagnostics" })
+		keymap.set("n", "<leader>fh", "<CMD>Telescope command_history<CR>", { desc = "Telescope Command History" })
 	end,
 	config = function()
 		local telescope = require("telescope")
