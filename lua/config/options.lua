@@ -2,7 +2,7 @@ local opt = vim.opt
 
 opt.laststatus = 3 -- global statusline
 opt.cursorline = true
-opt.fillchars = { eob = " " }
+opt.fillchars = { eob = "~" }
 
 -- disable nvim intro
 opt.shortmess:append("sI")
