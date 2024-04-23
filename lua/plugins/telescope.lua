@@ -1,42 +1,9 @@
 local options = function()
 	return {
 		defaults = {
-			vimgrep_arguments = {
-				"rg",
-				"-L",
-				"--color=never",
-				"--no-heading",
-				"--with-filename",
-				"--line-number",
-				"--column",
-				"--smart-case",
-			},
 			prompt_prefix = "   ",
-			-- selection_caret = "  ",
-			-- entry_prefix = "  ",
-			initial_mode = "insert",
-			selection_strategy = "reset",
-			sorting_strategy = "ascending",
-			layout_strategy = "horizontal",
-			layout_config = {
-				horizontal = {
-					prompt_position = "top",
-					preview_width = 0.55,
-				},
-				vertical = {
-					mirror = false,
-				},
-				width = 0.87,
-				height = 0.80,
-				preview_cutoff = 120,
-			},
 			file_ignore_patterns = { "node_modules" },
 			path_display = { "truncate" },
-			winblend = 0,
-			border = {},
-			borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-			color_devicons = true,
-			set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
 			-- Developer configurations: Not meant for general override
 			mappings = {
 				n = { ["q"] = require("telescope.actions").close },
@@ -46,7 +13,7 @@ local options = function()
 				},
 			},
 		},
-		extensions_list = { "themes" },
+		extensions_list = { "themes", "fzf", "ui-select" },
 		extensions = {
 			fzf = {
 				fuzzy = true,
@@ -54,15 +21,31 @@ local options = function()
 				override_file_sorter = true,
 				case_mode = "smart_case",
 			},
+			["ui-select"] = {
+				require("telescope.themes").get_dropdown(),
+			},
 		},
 	}
 end
 
 return {
 	"nvim-telescope/telescope.nvim",
-	tag = "0.1.6",
-	lazy = false,
-	dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-lua/plenary.nvim", "andrew-george/telescope-themes" },
+	branch = "0.1.x",
+	event = "VimEnter",
+	dependencies = {
+		"nvim-treesitter/nvim-treesitter",
+		"nvim-lua/plenary.nvim",
+		"andrew-george/telescope-themes",
+		{
+			"nvim-telescope/telescope-fzf-native.nvim",
+			build = "make",
+			cond = function()
+				return vim.fn.executable("make") == 1
+			end,
+		},
+		{ "nvim-telescope/telescope-ui-select.nvim" },
+		{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
+	},
 	cmd = "Telescope",
 	init = function()
 		local keymap = require("vim.keymap")
