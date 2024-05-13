@@ -63,7 +63,7 @@ return {
 		keymap.set("n", "<leader>fh", "<CMD>Telescope command_history<CR>", { desc = "Telescope Command History" })
 		keymap.set(
 			"n",
-			"<leader>fds",
+			"<leader>fs",
 			"<CMD>Telescope lsp_document_symbols<CR>",
 			{ desc = "Telescope Document Symbols" }
 		)
@@ -74,7 +74,7 @@ return {
 			{ desc = "Telescope Document Symbols" }
 		)
 		keymap.set("n", "<leader>fr", "<CMD>Telescope lsp_references<CR>", { desc = "Telescope Find References" })
-		keymap.set("n", "<leader>fh", "<CMD>Telescope help_tags<CR>", { desc = "Telescope Find References" })
+		keymap.set("n", "<leader>ft", "<CMD>Telescope help_tags<CR>", { desc = "Telescope Find References" })
 	end,
 	config = function()
 		local telescope = require("telescope")
