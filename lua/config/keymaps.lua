@@ -4,7 +4,6 @@ local opts = function(desc)
 	return { desc = desc, noremap = true, silent = true }
 end
 
-keymap.set("n", ";", ":", { desc = "CMD enter command mode" })
 -- Directory navigation
 keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", opts("Toggle NvimTree"))
 keymap.set("n", "<leader>e", ":NvimTreeFocus<CR>", opts("Focus NvimTree"))
