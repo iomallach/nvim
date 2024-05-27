@@ -5,7 +5,7 @@ local opts = function(desc)
 end
 
 -- Directory navigation
-keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", opts("Toggle NvimTree"))
+keymap.set("n", "<leader>n", ":NvimTreeToggle<CR>", opts("Toggle NvimTree"))
 keymap.set("n", "<leader>e", ":NvimTreeFocus<CR>", opts("Focus NvimTree"))
 
 -- Pane navigation and window navigation
@@ -85,3 +85,14 @@ keymap.set("n", "<leader>gg", "<CMD>Neogit<CR>", opts("Open Neogit"))
 -- Oil
 keymap.set("n", "-", "<CMD>Oil --float<CR>", opts("Open float oil"))
 
+-- Undotree
+keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, opts("Toggle Undotree"))
+
+-- Fugitive
+keymap("n", "<leader>P", function()
+	vim.cmd.Git("push")
+end, opts("Fugitive Git Push"))
+keymap("n", "<leader>p", function()
+	vim.cmd.Git({ "pull", "--rebase" })
+end, opts("Fugitive Git Pull Rebase"))
+keymap("n", "<leader>t", ":Git push -u origin", opts("Fugitive Git Push Origin"))
