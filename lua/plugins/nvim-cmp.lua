@@ -63,10 +63,10 @@ local options = function()
 			["<C-n>"] = cmp.mapping.select_next_item(),
 			["<C-d>"] = cmp.mapping.scroll_docs(-4),
 			["<C-u>"] = cmp.mapping.scroll_docs(4),
-			["<C-Space>"] = cmp.mapping.complete(),
+			["<C-y>"] = cmp.mapping.complete(),
 			["<C-e>"] = cmp.mapping.close(),
 
-			["<C-y>"] = cmp.mapping.confirm({
+			["<C-Space>"] = cmp.mapping.confirm({
 				behavior = cmp.ConfirmBehavior.Insert,
 				select = true,
 			}),
