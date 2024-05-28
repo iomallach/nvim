@@ -23,8 +23,8 @@ keymap.set("n", "<C-k>", ":TmuxNavigateUp<CR>") -- Navigate up
 keymap.set("n", "<C-l>", ":TmuxNavigateRight<CR>") -- Navigate right
 
 -- Insert mode movement
-keymap.set("i", "<C-b>", "<ESC>^i", { desc = "Move Beginning of line" })
-keymap.set("i", "<C-e>", "<End>", { desc = "Move End of line" })
+-- keymap.set("i", "<C-b>", "<ESC>^i", { desc = "Move Beginning of line" })
+-- keymap.set("i", "<C-e>", "<End>", { desc = "Move End of line" })
 keymap.set("i", "<C-h>", "<Left>", { desc = "Move Left" })
 keymap.set("i", "<C-l>", "<Right>", { desc = "Move Right" })
 keymap.set("i", "<C-j>", "<Down>", { desc = "Move Down" })
@@ -43,11 +43,6 @@ keymap.set("n", "<A-Up>", "<CMD>resize +2<CR>")
 keymap.set("n", "<A-Down>", "<CMD>resize -2<CR>")
 keymap.set("n", "<A-Left>", "<CMD>vertical resize +2<CR>")
 keymap.set("n", "<A-Right>", "<CMD>vertical resize -2<CR>")
-
--- Commenting
-keymap.set("n", "<leader>/", function()
-	require("Comment.api").toggle.linewise.current()
-end, { desc = "Comment Toggle" })
 
 keymap.set(
 	"v",
@@ -87,12 +82,3 @@ keymap.set("n", "-", "<CMD>Oil --float<CR>", opts("Open float oil"))
 
 -- Undotree
 keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, opts("Toggle Undotree"))
-
--- Fugitive
-keymap("n", "<leader>P", function()
-	vim.cmd.Git("push")
-end, opts("Fugitive Git Push"))
-keymap("n", "<leader>p", function()
-	vim.cmd.Git({ "pull", "--rebase" })
-end, opts("Fugitive Git Pull Rebase"))
-keymap("n", "<leader>t", ":Git push -u origin", opts("Fugitive Git Push Origin"))
