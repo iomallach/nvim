@@ -82,3 +82,6 @@ keymap.set("n", "-", "<CMD>Oil --float<CR>", opts("Open float oil"))
 
 -- Undotree
 keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, opts("Toggle Undotree"))
+
+-- ZenMode
+keymap.set("n", "<leader>tz", "<CMD>ZenMode<CR>", opts("Toggle ZenMode"))
